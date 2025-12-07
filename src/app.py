@@ -130,3 +130,8 @@ def unregister_from_activity(activity_name: str, email: str):
     # Remove student
     activity["participants"].remove(email)
     return {"message": f"Unregistered {email} from {activity_name}"}
+
+
+@app.get("/lost-and-found")
+def lost_and_found():
+    return RedirectResponse(url="/static/lost_and_found.html")
